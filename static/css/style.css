@@ -1,19 +1,17 @@
 :root {
     --primary-accent: #0d6efd;
-    /* Default (Light Mode) Variables */
-    --app-bg: #f8f9fa;           /* Abu-abu terang */
-    --card-bg: #ffffff;          /* Putih */
+    --app-bg: #f8f9fa;           
+    --card-bg: #ffffff;         
     --glass-bg: rgba(255, 255, 255, 0.85);
-    --text-color: #212529;       /* Hitam */
+    --text-color: #212529;       
     --border-color: rgba(0, 0, 0, 0.1);
 }
 
-/* Override variables untuk Dark Mode */
 [data-bs-theme="dark"] {
-    --app-bg: #121212;           /* Hitam pekat */
-    --card-bg: #1e1e1e;          /* Abu-abu gelap */
+    --app-bg: #121212;           
+    --card-bg: #1e1e1e;          
     --glass-bg: rgba(33, 37, 41, 0.85);
-    --text-color: #e0e0e0;       /* Putih tulang */
+    --text-color: #e0e0e0;       
     --border-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -31,7 +29,6 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     font-family: 'Poppins', sans-serif;
 }
 
-/* --- Navbar Glassmorphism --- */
 .navbar-glass {
     background-color: var(--glass-bg);
     backdrop-filter: blur(10px);
@@ -53,14 +50,11 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     transform: translateY(-2px);
 }
 
-/* Active link logic handled by Bootstrap text utilities, 
-   but we ensure specific color behavior */
 .nav-link.active {
     font-weight: 600;
     color: var(--primary-accent) !important;
 }
 
-/* --- Card Styling --- */
 .card {
     border: 1px solid var(--border-color);
     background-color: var(--card-bg);
@@ -68,21 +62,18 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-/* Table Text Color Adaptation */
 .table {
     color: var(--text-color) !important;
     --bs-table-color: var(--text-color);
     --bs-table-bg: transparent;
 }
 
-/* Input Fields Adaptation */
 .form-control {
     background-color: var(--card-bg);
     border-color: var(--border-color);
     color: var(--text-color);
 }
 
-/* Fix placeholder color in dark mode */
 [data-bs-theme="dark"] .form-control::placeholder {
     color: #6c757d;
 }
@@ -92,7 +83,6 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     color: var(--text-color);
 }
 
-/* --- Animations --- */
 .fade-in {
     animation: fadeIn 0.6s ease-in-out;
 }
