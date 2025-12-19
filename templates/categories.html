@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4 fade-in">
+    <div>
+        <h2 class="mb-1 fw-bold">Manage Categories</h2>
+        <p class="text-muted mb-0">Organize your spending habits efficiently.</p>
+    </div>
+    <a href="{{ url_for('add_category') }}" class="btn btn-primary shadow-sm px-4">
+        <i class="bi bi-plus-lg me-2"></i>Add Category
+    </a>
+</div>
+
+<div class="card border-0 shadow-sm fade-in">
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0" style="color: #e0e0e0;">
+                <thead class="bg-secondary bg-opacity-10 border-bottom border-secondary border-opacity-25">
+                    <tr>
+                        <th class="ps-4 py-3" style="width: 30%;">Category Name</th>
+                        <th class="py-3">Description</th>
+                        <th class="text-end pe-4 py-3" style="width: 15%;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cat in categories %}
+                    <tr class="border-bottom border-secondary border-opacity-10 transition-hover">
+                        <td class="ps-4 py-3">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-primary bg-opacity-10 text-primary rounded p-2 me-3">
+                                    <i class="bi bi-tag-fill"></i>
+                                </div>
+                                <span class="fw-semibold">{{ cat.name }}</span>
+                            </div>
+                        </td>
+                        
+                        <td class="text-muted small">
+                            {{ cat.description if cat.description else 'No description provided.' }}
+                        </td>
+
+                        <td class="text-end pe-4">
+                            <div class="btn-group" role="group">
+                                <a href="{{ url_for('edit_category', category_id=cat.id) }}" 
+                                   class="btn btn-sm btn-outline-warning" 
+                                   data-bs-toggle="tooltip" 
+                                   title="Edit Category">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+                                <a href="{{ url_for('delete_category', category_id=cat.id) }}" 
+                                   class="btn btn-sm btn-outline-danger" 
+                                   onclick="return confirm('⚠️ Are you sure? Deleting this category might affect expenses linked to it.');"
+                                   data-bs-toggle="tooltip" 
+                                   title="Delete Category">
+                                    <i class="bi bi-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="3" class="text-center py-5">
+                            <div class="text-muted opacity-50 mb-3">
+                                <i class="bi bi-folder-x fs-1"></i>
+                            </div>
+                            <h5 class="fw-normal text-muted">No categories found</h5>
+                            <p class="small text-muted mb-3">Create your first category to start organizing expenses.</p>
+                            <a href="{{ url_for('add_category') }}" class="btn btn-sm btn-outline-primary">
+                                Create Now
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+});
+</script>
+
+{% endblock %}
