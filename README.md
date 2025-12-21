@@ -64,6 +64,7 @@ To run this project on your local machine, follow these steps:
 
 ```bash
 git clone https://github.com/abidalfrz/flask-expense-tracker-webapp.git
+cd flask-expense-tracker-webapp
 ```
 
 ### 2. Create a Virtual Environment
