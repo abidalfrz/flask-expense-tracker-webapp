@@ -63,8 +63,7 @@ To run this project on your local machine, follow these steps:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/abidalfrz/flask-video-rest-api.git
-cd flask-video-rest-api
+git clone https://github.com/abidalfrz/flask-expense-tracker-webapp.git
 ```
 
 ### 2. Create a Virtual Environment
