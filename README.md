@@ -62,6 +62,8 @@ To run this project on your local machine, follow these steps:
 
 ### 1. Clone the Repository
 
+Open your terminal and run the following command:
+
 ```bash
 git clone https://github.com/abidalfrz/flask-expense-tracker-webapp.git
 cd flask-expense-tracker-webapp
