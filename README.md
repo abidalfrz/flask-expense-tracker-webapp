@@ -18,14 +18,19 @@ This repository contains a full-stack web application for tracking personal expe
 
 ## 🛠️ Tech Stack
 
-- **Python** 
-- **Flask**
-- **Flask-SQLAlchemy** 
-- **Flask-Login** 
-- **SQLite** 
-- **Bootstrap 5**
-- **Chart.js** 
-- **Vanilla JavaScript** 
+### Backend:
+
+- **Language:** Python
+- **Framework:** Flask
+- **Database:** SQLite
+- **ORM:** Flask-SQLAlchemy
+- **Authentication:** Flask-Login
+- **Hashing:** Werkzeug
+
+### Frontend:
+
+- **Framework:** Flask (Jinja2 Templates) & Bootstrap 5
+- **Styling:** CSS, Chart.js, Vanilla JavaScript
 
 ---
 
